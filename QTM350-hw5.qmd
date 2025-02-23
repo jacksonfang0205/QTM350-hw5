@@ -1,0 +1,95 @@
+---
+title: QTM350-hw5
+author: Jackson Fang
+date: 02/21/2025
+format:   
+    html
+bibliography: references.bib
+---
+
+# HW5
+
+## Q1 Load Data
+```{python}
+import pandas as pd
+data = pd.read_csv("wdi.csv")
+```
+
+
+## Q2 Exploratory Data Analysis
+```{python}
+# Find which country has the highest GDP per capita
+country_with_highest_gdp = data.loc[data['gdp_per_capita'].idxmax()]['country']
+print(f"The country with the highest GDP per capita is {country_with_highest_gdp}. Its gdp is {data['gdp_per_capita'].max():.2f}.")
+
+# Find which country has the highest GDP growth rate
+country_with_highest_gdp_growth = data.loc[data['gdp_growth_rate'].idxmax()]['country']
+print(f"The country with the highest GDP growth rate is {country_with_highest_gdp_growth} Its gdp growth rate is {data['gdp_growth_rate'].max():.2f}%.")
+
+# Calculate the average inflation rate
+average_inflation_rate = data['inflation_rate'].mean()
+print(f"The average inflation rate across all countries is {average_inflation_rate:.2f}%.")
+```
+
+
+
+## Q3 Two Plots Showing My Data Analysis
+```{python}
+#| echo: false
+#| fig-cap: "Top 10 countries by GDP per capita. Data Source: [@worldbank]"
+#| label: fig-01
+#| fig-env: figure
+#| fig-pos: H
+import matplotlib.pyplot as plt
+
+top_countries = data.nlargest(10, 'gdp_per_capita')
+
+plt.figure(figsize=(10, 6))
+plt.bar(top_countries['country'], top_countries['gdp_per_capita'], color='skyblue')
+plt.title('Top 10 Countries by GDP Per Capita')
+plt.xlabel('Country')
+plt.ylabel('GDP Per Capita')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+#| echo: false
+#| fig-cap: "Top 10 countries by GDP Growth Rate. Data Source: [@worldbank]"
+#| label: fig-02
+#| fig-env: figure
+#| fig-pos: H
+top_countries = data.nlargest(10, 'gdp_growth_rate')
+
+plt.figure(figsize=(10, 6))
+plt.scatter(top_countries['country'], top_countries['gdp_growth_rate'], color='green')
+plt.title('GDP Growth Rate by Country')
+plt.xlabel('Country')
+plt.ylabel('GDP Growth Rate (%)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+## Q5 Table of Key statistics
+
+
+| Country  | GDP Per Capita | GDP Growth Rate | Inflation Rate | Why Important?     |
+|----------|----------------|-----------------|----------------|--------------------|
+| Monaco   | 240862.18      | 11.10           | Unknown        | Highest GDP        |
+| Guyana   | 18199.47       | 63.43           | 6.115          | Highest GDP growth |
+| Lebanon  | 3823.94        | -0.63           | 171.20         | Highest inflation  |
+
+: Table of Key Statistics    {#tbl-keystats}
+
+
+## Q6 Cross-reference
+
+From @fig-01, we can see that the country that has the highest GDP per capita is Monoca. 
+From @fig-02, we can see that the country that has the highest GDP growth rate is Guyana.
+We can see from @tbl-keystats that their corresponding GDP, GDP growth rate, and inflation rates.
+
+## Q7 
+From @ahmad2016measuring, we learned how is gdp changing in the digital era. From @dynan2018gdp, we
+learn how gdp measure the economic well-being. 
