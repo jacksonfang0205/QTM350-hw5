@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 
 top_countries = data.nlargest(10, 'gdp_per_capita')
 
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 6))
 plt.bar(top_countries['country'], top_countries['gdp_per_capita'], color='skyblue')
 plt.title('Top 10 Countries by GDP Per Capita')
 plt.xlabel('Country')
@@ -62,7 +62,7 @@ plt.show()
 #| fig-pos: H
 top_countries = data.nlargest(10, 'gdp_growth_rate')
 
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(8, 6))
 plt.scatter(top_countries['country'], top_countries['gdp_growth_rate'], color='green')
 plt.title('GDP Growth Rate by Country')
 plt.xlabel('Country')
