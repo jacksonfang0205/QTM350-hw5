@@ -35,6 +35,9 @@ print(f"The average inflation rate across all countries is {average_inflation_ra
 
 ## Q3 Two Plots Showing My Data Analysis
 ```{python}
+#| fig-width: 4
+#| fig-height: 3
+#| fig-align: center
 #| echo: false
 #| fig-cap: "Top 10 countries by GDP per capita. Data Source: [@worldbank]"
 #| label: fig-01
@@ -55,6 +58,9 @@ plt.show()
 ```
 
 ```{python}
+#| fig-width: 4
+#| fig-height: 3
+#| fig-align: center
 #| echo: false
 #| fig-cap: "Top 10 countries by GDP Growth Rate. Data Source: [@worldbank]"
 #| label: fig-02

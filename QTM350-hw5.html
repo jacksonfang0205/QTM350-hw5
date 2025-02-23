@@ -134,14 +134,14 @@ div.csl-indent {
 <h1>HW5</h1>
 <section id="q1-load-data" class="level2">
 <h2 class="anchored" data-anchor-id="q1-load-data">Q1 Load Data</h2>
-<div id="c1d896f6" class="cell" data-execution_count="1">
+<div id="23b97e58" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"wdi.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="q2-exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="q2-exploratory-data-analysis">Q2 Exploratory Data Analysis</h2>
-<div id="1613d8f1" class="cell" data-execution_count="2">
+<div id="a39dcca4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find which country has the highest GDP per capita</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>country_with_highest_gdp <span class="op">=</span> data.loc[data[<span class="st">'gdp_per_capita'</span>].idxmax()][<span class="st">'country'</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The country with the highest GDP per capita is </span><span class="sc">{</span>country_with_highest_gdp<span class="sc">}</span><span class="ss">. Its gdp is </span><span class="sc">{</span>data[<span class="st">'gdp_per_capita'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">."</span>)</span>
@@ -162,12 +162,12 @@ The average inflation rate across all countries is 12.49%.</code></pre>
 </section>
 <section id="q3-two-plots-showing-my-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="q3-two-plots-showing-my-data-analysis">Q3 Two Plots Showing My Data Analysis</h2>
-<div id="cell-fig-01" class="cell" data-execution_count="3">
+<div id="cell-fig-01" class="cell" data-fig-height="3" data-fig-width="4" data-execution_count="3">
 <div class="cell-output cell-output-display">
-<div id="fig-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-env="figure">
+<div id="fig-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" data-fig-env="figure">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="QTM350-hw5_files/figure-html/fig-01-output-1.png" data-fig-env="figure" data-fig-pos="H" width="469" height="373" class="figure-img">
+<img src="QTM350-hw5_files/figure-html/fig-01-output-1.png" class="quarto-figure quarto-figure-center figure-img" data-fig-env="figure" data-fig-pos="H" width="469" height="373">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Top 10 countries by GDP per capita. Data Source: <span class="citation" data-cites="worldbank">(<a href="#ref-worldbank" role="doc-biblioref">World Bank 2025</a>)</span>
@@ -176,12 +176,12 @@ Figure&nbsp;1: Top 10 countries by GDP per capita. Data Source: <span class="cit
 </div>
 </div>
 </div>
-<div id="cell-fig-02" class="cell" data-execution_count="4">
+<div id="cell-fig-02" class="cell" data-fig-height="3" data-fig-width="4" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<div id="fig-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-env="figure">
+<div id="fig-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H" data-fig-env="figure">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="QTM350-hw5_files/figure-html/fig-02-output-1.png" data-fig-env="figure" data-fig-pos="H" width="468" height="372" class="figure-img">
+<img src="QTM350-hw5_files/figure-html/fig-02-output-1.png" class="quarto-figure quarto-figure-center figure-img" data-fig-env="figure" data-fig-pos="H" width="468" height="372">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Top 10 countries by GDP Growth Rate. Data Source: <span class="citation" data-cites="worldbank">(<a href="#ref-worldbank" role="doc-biblioref">World Bank 2025</a>)</span>
